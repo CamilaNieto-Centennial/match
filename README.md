@@ -18,6 +18,12 @@ A modern, interactive UI built with **Vite, TailwindCSS, jQuery, and GSAP**. It 
     │   ├── avatar.png
     │── src/
     │   ├── components/
+    │   │   ├── AddModal.html
+    │   │   ├── BottomNavbar.html
+    │   │   ├── CreateModal.html
+    │   │   ├── EditModal.html
+    │   │   ├── Main.html
+    │   │   ├── Navbar.html
     │   ├── js/
     │   │   ├── dropdown.js
     │   │   ├── sortable.js
