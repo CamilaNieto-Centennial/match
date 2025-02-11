@@ -23,7 +23,6 @@
   --onMuted: #E0E0E0;
 }
 
-
 body {
   font-family: 'Quicksand', sans-serif;
 }
@@ -31,7 +30,6 @@ body {
 a {
   line-height: 1;
 }
-
 
 .icon {
   @apply leading-none;
@@ -67,6 +65,44 @@ a {
   z-index: 10;
 }
 
+.btn-primary {
+  @apply w-fit focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600;
+}
+
+.btn-secondary {
+  @apply flex items-center gap-1 rounded-sm py-1 px-4 w-fit bg-secondary hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-800 text-primary;
+}
+
+.btn-tertiary {
+  @apply flex justify-center gap-1 rounded-sm py-1 px-4 w-full bg-tertiary text-onPrimary hover:bg-blue-800 focus:ring-blue-600 focus:ring-2;
+}
+
+.stars {
+  @apply flex gap-[2px] text-onPrimary;
+}
+
+.dropdown-select-button {
+  @apply flex gap-2 items-center rounded py-2.5 bg-primary10 text-onPrimary focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600;
+}
+
+/*CHECK*/
+.dropdown-menu {
+  @apply hidden z-10 bg-primary20 rounded-lg shadow-sm w-full cursor-pointer;
+}
+
+.dropdown-list {
+  @apply py-2 text-sm text-onPrimary10 relative max-h-60 overflow-y-auto;
+}
+
+.dropdown-list a {
+  @apply block px-4 py-3 hover:bg-zinc-800 text-zinc-200 hover:text-white;
+}
+
+.dropdown-item-checked {
+  @apply hover:bg-zinc-600 bg-zinc-600;
+}
+
+/* --- NAVBAR --- */
 .navbar {
   @apply flex items-center justify-between h-16 p-4 bg-primary text-onMuted;
 }
@@ -79,16 +115,13 @@ a {
   @apply flex items-center gap-3 py-4;
 }
 
+/* --- LEFT SECTION: CUSTOMERS ---*/
 .customer-section {
   @apply flex flex-col gap-4 p-4 m-4 bg-primary rounded-lg w-[17rem] h-[calc(100vh-7rem)];
 }
 
 .section-header {
   @apply flex items-center gap-2 justify-between w-full;
-}
-
-.btn-primary {
-  @apply flex items-center gap-1 rounded-sm py-1 px-4 w-fit bg-secondary hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-800 text-primary;
 }
 
 .scrollable-content {
@@ -103,59 +136,182 @@ a {
   @apply flex flex-col items-center;
 }
 
-.stars {
-  @apply flex gap-[2px] text-onPrimary;
-}
-
 .customer-actions {
   @apply relative flex flex-col gap-1;
-}
-
-.dropdown-list {
-  @apply py-2 text-sm text-onPrimary10;
-}
-
-.dropdown-list a {
-  @apply block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white;
 }
 
 .btn-sm {
   @apply text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600;
 }
 
+/* --- FILTERS --- */
+.dropdown-container {
+  @apply relative w-fit;
+}
 
-/* Hide the default dropdown arrow */
-/* select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: none;
-} */
+.main-container {
+  @apply flex flex-col gap-4 m-4 w-full h-[calc(100vh-7rem)];
+}
 
-/* Custom styles for the select dropdown */
-/* .custom-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: #202020;
-  color: #f9f9fb;
-  border: none;
-  cursor: pointer;
-  padding-right: 2.5rem;
-} */
+.filter-wrapper {
+  @apply flex gap-4;
+}
 
-/* Style the dropdown options */
-/* .custom-select option {
-  background-color: #202020;
-  color: #e0e0e0;
-  padding: 10px;
-  line-height: 1.5;
-} */
+.filter-box {
+  @apply flex flex-col gap-2 rounded-lg p-2 bg-primary w-full h-fit;
+}
 
-/* Remove blue highlight on hover (browser default) */
-/* .custom-select option:checked,
-.custom-select option:focus,
-.custom-select option:hover {
-  background-color: #3a3a3a !important;
-  color: white !important;
-} */
+.filter-controls {
+  @apply flex gap-2;
+}
+
+.search-container {
+  @apply relative w-full h-full;
+}
+
+.search-icon {
+  @apply absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-xl text-zinc-300;
+}
+
+.search-input {
+  @apply block w-full h-full py-2 px-4 ps-10 text-base rounded bg-primary10 border-zinc-600 placeholder-zinc-300 text-onPrimary focus:ring-zinc-600 focus:ring-2 focus:outline-none;
+}
+
+.filter-toggle {
+  @apply flex gap-2 items-center rounded py-2 px-4 w-fit bg-primary10 text-onPrimary text-xl focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600;
+}
+
+.customer-info-box {
+  @apply flex justify-between rounded-lg bg-primary py-3 px-6;
+}
+
+.customer-details {
+  @apply flex flex-col gap-1 w-fit;
+}
+
+.customer-label {
+  @apply text-sm font-light text-onPrimary;
+}
+
+.customer-value {
+  @apply text-xl text-onPrimary;
+}
+
+/* --- LIST OF PROJECTS --- */
+.scrollable-content {
+  @apply relative h-full overflow-y-auto;
+}
+
+.project-card {
+  @apply flex gap-2 items-center;
+}
+
+.drag-container {
+  @apply flex justify-center text-center rounded bg-primary hover:bg-zinc-700 cursor-pointer;
+}
+
+.project-content {
+  @apply flex flex-col justify-between rounded-lg bg-primary py-3 px-6 w-full;
+}
+
+.project-header {
+  @apply flex justify-between items-center;
+}
+
+.project-info {
+  @apply flex flex-col gap-1;
+}
+
+.icon-btn {
+  @apply flex flex-col items-center hover:text-zinc-400;
+}
+
+.status-icons {
+  @apply flex gap-2 items-center text-onPrimary10;
+}
+
+.tooltip-btn {
+  @apply flex items-center justify-center p-1 rounded-full focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600;
+}
+
+.tooltip-normal {
+  @apply absolute z-10 px-3 py-2 text-sm font-medium text-onPrimary bg-primary30 rounded-lg;
+}
+
+.action-controls {
+  @apply flex flex-col gap-1 items-center w-28;
+}
+
+.action-buttons {
+  @apply flex justify-center gap-6 py-6;
+}
+
+/* --- BOTTOM NAV --- */
+.bottom-nav {
+  @apply fixed z-40 w-full h-[4.5rem] max-w-sm -translate-x-1/2 bottom-4 left-1/2 rounded-lg bg-primary20;
+}
+
+.bottom-nav-grid {
+  @apply grid h-full max-w-lg grid-cols-4 mx-auto;
+}
+
+.bottom-nav-btn {
+  @apply inline-flex flex-col gap-0.5 items-center justify-center px-5 text-zinc-400 hover:text-onPrimary hover:bg-zinc-700 group-hover:text-onPrimary;
+}
+
+.bottom-nav-btn.active {
+  @apply text-secondary10;
+}
+
+/* --- MODALS --- */
+.modal-overlay {
+  @apply overflow-y-auto overflow-x-hidden justify-center items-center w-full h-[calc(100%-1rem)] max-h-full bg-black/50;
+}
+
+.modal-container {
+  @apply relative p-4 w-full max-h-full;
+}
+
+.modal-content {
+  @apply relative rounded-lg shadow-sm bg-primary20 z-50;
+}
+
+.modal-body {
+  @apply p-4 md:p-5;
+}
+
+.form-container {
+  @apply flex flex-col gap-4;
+}
+
+.form-group {
+  @apply flex flex-col gap-1;
+}
+
+.form-label {
+  @apply block text-onMuted;
+}
+
+.form-input {
+  @apply block w-full p-3 rounded-md bg-primary10 placeholder-neutral10 text-white focus:ring-zinc-600;
+}
+
+.switch {
+  @apply inline-flex items-center cursor-pointer;
+}
+
+.switch div {
+  @apply relative w-11 h-6 rounded-full bg-zinc-700 peer-focus:ring-4 peer-focus:ring-yellow-800 border border-zinc-600 peer-checked:bg-secondary;
+}
+
+.modal-actions {
+  @apply flex gap-4 w-full h-full justify-end self-end;
+}
+
+.btn-cancel {
+  @apply btn-primary text-zinc-400 hover:bg-zinc-600 hover:text-white focus:ring-zinc-800;
+}
+
+.btn-save {
+  @apply btn-secondary;
+}
