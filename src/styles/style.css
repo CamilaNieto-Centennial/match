@@ -125,7 +125,7 @@ a {
 }
 
 .scrollable-content {
-  @apply relative h-full overflow-y-auto;
+  @apply w-full h-full overflow-y-auto;
 }
 
 .customer-card {

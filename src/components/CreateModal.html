@@ -1,0 +1,330 @@
+<div id="create-customer-modal" tabindex="-1" aria-hidden="true" class="modal-overlay hidden fixed inset-0 z-50">
+  <div class="modal-container max-w-6xl" data-simplebar>
+    <div class="modal-content text-white">
+      <div class="modal-body flex flex-col gap-4">
+        <p class="text-xl font-medium">New customer</p>
+        <form class="form-container" action="#">
+          <div class="form-group">
+            <p class="text-sm">Customer information</p>
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-4">
+                <div class="form-group w-full">
+                  <label for="saleLocation" class="form-label">Sale Location</label>
+                  <input type="text" name="saleLocation" id="saleLocation" class="form-input" placeholder="Quote 1"
+                    required />
+                </div>
+                <div class="form-group w-full">
+                  <label for="salePerson" class="w-full text-onMuted">Sale Person</label>
+                  <div class="relative w-full">
+                    <button type="button" id="dropdownSalePersonBtn" data-dropdown-toggle="dropdownSalePersonMenu"
+                      data-dropdown-offset-distance="-45" class="dropdown-select-button px-3 justify-between w-full">
+                      <p id="selectedProjectStatusEditProject" class="text-base text-nowrap">Countertops</p>
+                      <i class="material-symbols-outlined">keyboard_arrow_down</i>
+                    </button>
+                    <div id="dropdownSalePersonMenu"
+                      class="hidden absolute left-0 top-full z-[60] bg-primary20 rounded-lg shadow-sm w-full overflow-visible cursor-pointer">
+                      <ul class="dropdown-list" data-simplebar aria-labelledby="salePersonList">
+                        <li><a data-value="Countertops" class="dropdown-item dropdown-item-checked">Countertops</a>
+                        </li>
+                        <li><a data-value="Person A" class="dropdown-item">Person A</a></li>
+                        <li><a data-value="Person B" class="dropdown-item">Person B</a></li>
+                      </ul>
+                    </div>
+                    <input type="hidden" name="salePerson" id="salePersonInput">
+                  </div>
+                </div>
+                <div class="form-group w-full">
+                  <label for="status" class="w-full text-onMuted">Status</label>
+                  <div class="relative w-full">
+                    <button type="button" id="dropdownStatusBtn" data-dropdown-toggle="dropdownStatusMenu"
+                      data-dropdown-offset-distance="-45" class="dropdown-select-button px-3 justify-between w-full">
+                      <p id="selectedStatus" class="text-base text-nowrap">Working</p>
+                      <i class="material-symbols-outlined">keyboard_arrow_down</i>
+                    </button>
+                    <div id="dropdownStatusMenu"
+                      class="hidden absolute left-0 top-full z-[60] bg-primary20 rounded-lg shadow-sm w-full overflow-visible cursor-pointer">
+                      <ul class="dropdown-list" data-simplebar aria-labelledby="statusList">
+                        <li><a data-value="Working" class="dropdown-item dropdown-item-checked">Working</a></li>
+                        <li><a data-value="Not Working" class="dropdown-item">Not Working</a></li>
+                        <li><a data-value="All Statuses" class="dropdown-item">All Statuses</a></li>
+                      </ul>
+                    </div>
+                    <input type="hidden" name="status" id="statusInput">
+                  </div>
+                </div>
+                <div class="form-group w-full">
+                  <label for="customerName" class="form-label">Customer name</label>
+                  <input type="text" name="customerName" id="customerName" class="form-input"
+                    placeholder="Customer name" required />
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="form-group w-full">
+                  <label for="address" class="form-label">Address</label>
+                  <input type="text" name="address" id="address" class="form-input" placeholder="Street name"
+                    required />
+                </div>
+                <div class="form-group w-full">
+                  <label for="address2" class="form-label">Address 2</label>
+                  <input type="text" name="address2" id="address2" class="form-input" placeholder="Street name"
+                    required />
+                </div>
+                <div class="form-group w-full">
+                  <label for="zipCode" class="form-label">Zip code</label>
+                  <input type="text" name="zipCode" id="zipCode" class="form-input" placeholder="Street name"
+                    required />
+                </div>
+                <div class="form-group w-full">
+                  <label for="country" class="w-full text-onMuted">Country</label>
+                  <div class="relative w-full">
+                    <button type="button" id="dropdownCountryBtn" data-dropdown-toggle="dropdownCountryMenu"
+                      data-dropdown-offset-distance="-45" class="dropdown-select-button px-3 justify-between w-full">
+                      <p id="selectedCountry" class="text-base text-nowrap">United States</p>
+                      <i class="material-symbols-outlined">keyboard_arrow_down</i>
+                    </button>
+                    <div id="dropdownCountryMenu"
+                      class="hidden absolute left-0 top-full z-[60] bg-primary20 rounded-lg shadow-sm w-full overflow-visible cursor-pointer">
+                      <ul class="dropdown-list" data-simplebar aria-labelledby="countryList">
+                        <li><a data-value="United States" class="dropdown-item dropdown-item-checked">United
+                            States</a></li>
+                        <li><a data-value="Canada" class="dropdown-item">Canada</a></li>
+                        <li><a data-value="Portugal" class="dropdown-item">Portugal</a></li>
+                      </ul>
+                    </div>
+                    <input type="hidden" name="country" id="countryInput">
+                  </div>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="form-group w-full">
+                  <label for="state" class="w-full text-onMuted">State</label>
+                  <div class="relative w-full">
+                    <button type="button" id="dropdownStateBtn" data-dropdown-toggle="dropdownStateMenu"
+                      data-dropdown-offset-distance="-45" class="dropdown-select-button px-3 justify-between w-full">
+                      <p id="selectedState" class="text-base text-nowrap">Chicago</p>
+                      <i class="material-symbols-outlined">keyboard_arrow_down</i>
+                    </button>
+                    <div id="dropdownStateMenu"
+                      class="hidden absolute left-0 top-full z-[60] bg-primary20 rounded-lg shadow-sm w-full overflow-visible cursor-pointer">
+                      <ul class="dropdown-list" data-simplebar aria-labelledby="stateList">
+                        <li><a data-value="Chicago" class="dropdown-item dropdown-item-checked">Chicago</a></li>
+                        <li><a data-value="New York" class="dropdown-item">New York</a></li>
+                        <li><a data-value="California" class="dropdown-item">California</a></li>
+                      </ul>
+                    </div>
+                    <input type="hidden" name="state" id="stateInput">
+                  </div>
+                </div>
+                <div class="form-group w-full">
+                  <label for="city w-full" class="form-label">City</label>
+                  <div class="relative w-full">
+                    <button type="button" id="dropdownCityBtn" data-dropdown-toggle="dropdownCityMenu"
+                      data-dropdown-offset-distance="-45" class="dropdown-select-button px-3 justify-between w-full">
+                      <p id="selectedCity" class="text-base text-nowrap">Illinois</p>
+                      <i class="material-symbols-outlined">keyboard_arrow_down</i>
+                    </button>
+                    <div id="dropdownCityMenu"
+                      class="hidden absolute left-0 top-full z-[60] bg-primary20 rounded-lg shadow-sm w-full overflow-visible cursor-pointer">
+                      <ul class="dropdown-list" data-simplebar aria-labelledby="dropdownCityList">
+                        <li><a data-value="Illinois" class="dropdown-item dropdown-item-checked">Illinois</a></li>
+                        <li><a data-value="New York" class="dropdown-item">New York</a></li>
+                        <li><a data-value="San Francisco" class="dropdown-item">San Francisco</a></li>
+                      </ul>
+                    </div>
+                    <input type="hidden" name="city" id="cityInput">
+                  </div>
+                </div>
+                <div class="form-group w-full">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="text" name="phone" id="phone" class="form-input" placeholder="+00 0000 0000" required />
+                </div>
+                <div class="form-group w-full">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" name="email" id="email" class="form-input" placeholder="email@email.com"
+                    required />
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="form-group w-1/4 pr-4">
+                  <label for="website" class="form-label">Website</label>
+                  <input type="text" name="website" id="website" class="form-input" placeholder="website.com"
+                    required />
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="form-group">
+            <p class="text-sm">Finantial information</p>
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-4">
+                <div class="form-group w-full">
+                  <label for="taxApplicable" class="form-label">Tax applicable</label>
+                  <label class="switch">
+                    <input type="checkbox" name="taxApplicable" id="taxApplicable" value="" class="sr-only peer"
+                      checked>
+                    <div
+                      class="peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-zinc-600 peer-checked:bg-secondary">
+                    </div>
+                  </label>
+                </div>
+                <div class="form-group w-full">
+                  <label for="taxNumber" class="form-label">Tax Number</label>
+                  <input type="text" name="taxNumber" id="taxNumber" class="form-input" placeholder="Street name"
+                    required />
+                </div>
+                <div class="form-group w-full">
+                  <label for="totalTax" class="form-label">Total Tax</label>
+                  <input type="number" name="totalTax" id="totalTax" class="form-input" placeholder="Total Tax"
+                    required />
+                </div>
+                <div class="form-group w-full">
+                  <label for="discount" class="form-label">Discount</label>
+                  <input type="number" name="discount" id="discount" class="form-input" placeholder="Discount"
+                    required />
+                </div>
+              </div>
+              <div class="flex gap-[2px]">
+                <div class="form-group w-1/4 pr-[12px]">
+                  <label for="price" class="w-full text-onMuted">Price</label>
+                  <div class="relative w-full">
+                    <button type="button" id="dropdownPriceBtn" data-dropdown-toggle="dropdownPriceMenu"
+                      data-dropdown-offset-distance="-45" class="dropdown-select-button px-3 justify-between w-full">
+                      <p id="selectedPrice" class="text-base text-nowrap">Price 1</p>
+                      <i class="material-symbols-outlined">keyboard_arrow_down</i>
+                    </button>
+                    <div id="dropdownPriceMenu"
+                      class="hidden absolute left-0 top-full z-[60] bg-primary20 rounded-lg shadow-sm w-full overflow-visible cursor-pointer">
+                      <ul class="dropdown-list" data-simplebar aria-labelledby="priceList">
+                        <li><a data-value="Price 1" class="dropdown-item dropdown-item-checked">Price 1</a></li>
+                        <li><a data-value="Price 2" class="dropdown-item">Price 2</a></li>
+                        <li><a data-value="Price 3" class="dropdown-item">Price 3</a></li>
+                      </ul>
+                    </div>
+                    <input type="hidden" name="price" id="priceInput">
+                  </div>
+                </div>
+                <div class="form-group w-1/4 pr-[12px]">
+                  <label for="currency w-full" class="form-label">Currency</label>
+                  <div class="relative w-full">
+                    <button type="button" id="dropdownCurrencyBtn" data-dropdown-toggle="dropdownCurrencyMenu"
+                      data-dropdown-offset-distance="-45" class="dropdown-select-button px-3 justify-between w-full">
+                      <p id="selectedCurrency" class="text-base text-nowrap">Dollar</p>
+                      <i class="material-symbols-outlined">keyboard_arrow_down</i>
+                    </button>
+                    <div id="dropdownCurrencyMenu"
+                      class="hidden absolute left-0 top-full z-[60] bg-primary20 rounded-lg shadow-sm w-full overflow-visible cursor-pointer">
+                      <ul class="dropdown-list" data-simplebar aria-labelledby="dropdownCurrencyList">
+                        <li><a data-value="Dollar" class="dropdown-item dropdown-item-checked">Dollar</a></li>
+                        <li><a data-value="Euro" class="dropdown-item">Euro</a></li>
+                        <li><a data-value="Peso" class="dropdown-item">Peso</a></li>
+                      </ul>
+                    </div>
+                    <input type="hidden" name="currency" id="currencyInput">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="form-group">
+            <p class="text-sm">Responsible person</p>
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-4">
+                <div class="form-group w-full">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" name="name" id="name" class="form-input" placeholder="Responsible" required />
+                </div>
+                <div class="form-group w-full">
+                  <label for="phoneRP" class="form-label">Phone</label>
+                  <input type="text" name="phoneRP" id="phoneRP" class="form-input" placeholder="+00 0000 0000"
+                    required />
+                </div>
+                <div class="form-group w-full">
+                  <label for="emailRP" class="form-label">Email</label>
+                  <input type="email" name="emailRP" id="emailRP" class="form-input" placeholder="email@email.com"
+                    required />
+                </div>
+                <div class="form-group w-full">
+                  <label for="note" class="form-label">Note</label>
+                  <input type="text" name="note" id="note" class="form-input" required />
+                </div>
+              </div>
+              <div class="flex gap-[2px]">
+                <div class="form-group w-1/4 pr-[12px]">
+                  <label for="priceRP" class="w-full text-onMuted">Price</label>
+                  <div class="relative w-full">
+                    <button type="button" id="dropdownPriceRPBtn" data-dropdown-toggle="dropdownPriceRPMenu"
+                      data-dropdown-offset-distance="-45" class="dropdown-select-button px-3 justify-between w-full">
+                      <p id="selectedPriceRP" class="text-base text-nowrap">Price 1</p>
+                      <i class="material-symbols-outlined">keyboard_arrow_down</i>
+                    </button>
+                    <div id="dropdownPriceRPMenu"
+                      class="hidden absolute left-0 top-full z-[60] bg-primary20 rounded-lg shadow-sm w-full overflow-visible cursor-pointer">
+                      <ul class="dropdown-list" data-simplebar aria-labelledby="priceList">
+                        <li><a data-value="Price 1" class="dropdown-item dropdown-item-checked">Price 1</a></li>
+                        <li><a data-value="Price 2" class="dropdown-item">Price 2</a></li>
+                        <li><a data-value="Price 3" class="dropdown-item">Price 3</a></li>
+                      </ul>
+                    </div>
+                    <input type="hidden" name="priceRP" id="priceRPInput">
+                  </div>
+                </div>
+                <div class="form-group w-1/4 pr-[12px]">
+                  <label for="currencyRP w-full" class="form-label">Currency</label>
+                  <div class="relative w-full">
+                    <button type="button" id="dropdownCurrencyRPBtn" data-dropdown-toggle="dropdownCurrencyRPMenu"
+                      data-dropdown-offset-distance="-45" class="dropdown-select-button px-3 justify-between w-full">
+                      <p id="selectedCurrencyRP" class="text-base text-nowrap">Dollar</p>
+                      <i class="material-symbols-outlined">keyboard_arrow_down</i>
+                    </button>
+                    <div id="dropdownCurrencyRPMenu"
+                      class="hidden absolute left-0 top-full z-[60] bg-primary20 rounded-lg shadow-sm w-full overflow-visible cursor-pointer">
+                      <ul class="dropdown-list" data-simplebar aria-labelledby="dropdownCurrencyRPList">
+                        <li><a data-value="Dollar" class="dropdown-item dropdown-item-checked">Dollar</a></li>
+                        <li><a data-value="Euro" class="dropdown-item">Euro</a></li>
+                        <li><a data-value="Peso" class="dropdown-item">Peso</a></li>
+                      </ul>
+                    </div>
+                    <input type="hidden" name="currencyRP" id="currencyRPInput">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="form-group">
+            <p class="text-sm">Website</p>
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-4 h-full">
+                <div class="form-group w-full h-full">
+                  <label for="activate" class="form-label">Activate</label>
+                  <label class="switch">
+                    <input type="checkbox" name="activate" id="activate" value="" class="sr-only peer" checked>
+                    <div
+                      class="peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-zinc-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-zinc-600 peer-checked:bg-secondary">
+                    </div>
+                  </label>
+                </div>
+                <div class="form-group w-full">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" name="username" id="username" class="form-input" placeholder="Username" required />
+                </div>
+                <div class="form-group w-full">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" name="password" id="password" class="form-input" placeholder="••••••••"
+                    required />
+                </div>
+                <div class="modal-actions">
+                  <button type="reset" data-modal-hide="create-customer-modal"
+                    class="btn-cancel rounded-sm py-1 px-4">Cancel</button>
+                  <button type="submit" class="btn-save rounded-sm py-1 px-4">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div id="add-project-modal" tabindex="-1" aria-hidden="true" class="modal-overlay hidden fixed inset-0 z-50">
+  <div class="modal-container max-w-md">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form class="form-container" action="#">
+          <div class="form-group">
+            <label for="projectName" class="form-label">Project name</label>
+            <input type="text" name="projectName" id="projectName" class="form-input" placeholder="Placeholder"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="reference" class="form-label">Reference</label>
+            <input type="text" name="reference" id="reference" class="form-input" placeholder="Placeholder" required />
+          </div>
+          <div class="form-group">
+            <label for="jobType w-full" class="form-label">Job Type</label>
+            <div class="relative w-full">
+              <button type="button" id="dropdownJobTypeProjectBtn" data-dropdown-toggle="dropdownJobTypeProjectMenu"
+                data-dropdown-offset-distance="-45" class="dropdown-select-button px-3 justify-between w-full">
+                <p id="selectedJobTypeProject" class="text-base text-nowrap">Job Type</p>
+                <i class="material-symbols-outlined">keyboard_arrow_down</i>
+              </button>
+              <div id="dropdownJobTypeProjectMenu"
+                class="hidden absolute left-0 top-full z-10 bg-primary20 rounded-lg shadow-sm w-full overflow-visible cursor-pointer">
+                <ul class="dropdown-list" data-simplebar aria-labelledby="dropdownJobTypeList">
+                  <li><a data-value="Job Type" class="dropdown-item dropdown-item-checked">Job Type</a></li>
+                  <li><a data-value="All Jobs" class="dropdown-item">All Jobs</a></li>
+                  <li><a data-value="Job" class="dropdown-item">Job</a></li>
+                  <li><a data-value="Potential job" class="dropdown-item">Potential job</a></li>
+                </ul>
+              </div>
+              <input type="hidden" name="jobType" id="jobTypeInput">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="search-project-modal" class="form-label">EQ Project</label>
+            <div class="relative w-full h-full">
+              <a class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <i class="material-symbols-outlined !text-xl text-zinc-300">search</i>
+              </a>
+              <input type="text" name="search-project-modal" id="search-project-modal" class="search-input"
+                placeholder="Select" required />
+            </div>
+          </div>
+          <div class="modal-actions">
+            <button type="reset" data-modal-hide="add-project-modal"
+              class="btn-cancel rounded-sm py-1 px-4">Cancel</button>
+            <button type="submit" class="btn-save rounded-sm py-1 px-4">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

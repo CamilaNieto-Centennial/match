@@ -2,7 +2,7 @@ import $ from 'jquery';
 import gsap from "gsap";
 
 export function initToggles() {
-  $(".toggle-actions").click(function () {
+  $(document).on("click", ".toggle-actions", function () {
     let projectContainer = $(this).closest('.flex');
     let icon = $(this).find("i");
     let text = $(this).find("p");
@@ -21,7 +21,7 @@ export function initToggles() {
     projectContainer.siblings(".actions-container").slideToggle(300);
   });
 
-  $(".toggle-filters").click(function () {
+  $(document).on("click", ".toggle-filters", function () {
     $(".filters-container").slideToggle(300);
   });
 }
