@@ -5,453 +5,368 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Match</title>
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link href="./src/styles/style.css" rel="stylesheet">
 </head>
 
 <body class="bg-primary10 overflow-hidden">
-  <nav class="flex items-center justify-between h-16 p-4 bg-primary text-onMuted">
-    <a href="#!" class="flex items-center gap-4 text-base">
-      <i class="material-icons !text-2xl">home</i>
+  <nav class="navbar">
+    <a href="#!" class="navbar-link">
+      <i class="material-icons icon-base">home</i>
       <p class="text-xl">Match</p>
     </a>
     <div class="flex items-center gap-10">
       <div class="flex items-center gap-6 px-4">
-        <div class="flex items-center gap-3 py-4">
+        <div class="navbar-profile">
           <img class="h-6" src="/avatar.png" alt="Avatar">
           <p class="text-base text-onPrimary10">Profile</p>
         </div>
-        <i class="material-symbols-outlined !text-2xl">notifications</i>
+        <i class="material-symbols-outlined icon-base">notifications</i>
       </div>
       <div class="flex items-center gap-10">
-        <i class="material-icons !text-base ">remove</i>
-        <i class="material-icons !text-base ">content_copy</i>
-        <i class="material-icons !text-base">close</i>
+        <i class="material-icons icon-sm">remove</i>
+        <i class="material-icons icon-sm">content_copy</i>
+        <i class="material-icons icon-sm">close</i>
       </div>
     </div>
   </nav>
   <div class="flex">
-    <section
-      class="flex flex-col gap-4 p-4 m-4 bg-primary shadow-[0px_6px_10px_0px_rgba(0,0,0,0.25)] rounded-lg w-[17rem] h-[calc(100vh-7rem)]">
-      <div class="flex items-center justify-between w-full">
-        <div class="flex">
-          <p class="text-onPrimary text-xl">Customers</p>
-        </div>
+    <section class="customer-section">
+      <div class="section-header">
+        <p class="text-onPrimary text-xl">Customers</p>
         <button type="button" data-modal-target="create-customer-modal" data-modal-toggle="create-customer-modal"
-          class="flex items-center gap-1 rounded-sm py-1 px-4 w-fit bg-secondary hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-800 text-primary">
-          <i class="material-symbols-outlined !text-base">add_circle</i>
+          class="btn-primary">
+          <i class="material-symbols-outlined text-base">add_circle</i>
           <p class="text-base">Customer</p>
         </button>
       </div>
-      <div class="relative h-full overflow-y-auto" data-simplebar>
+      <div class="scrollable-content" data-simplebar>
         <div class="flex flex-col gap-2 pr-3.5">
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots1"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots1" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots2"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots2" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots3"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots3" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots4"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots4" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots5"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots5" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots6"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots6" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots7"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots7" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots8"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots8" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots9"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots9" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots10"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots10" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots11"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots11" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
+          <div class="customer-card">
+            <div class="customer-info">
               <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
+              <div class="stars">
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
+                <i class="material-symbols-outlined text-xs">star</i>
               </div>
             </div>
-            <div class="relative flex flex-col gap-1 text-primary">
+            <div class="customer-actions">
               <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots12"
                 data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
+                class="material-symbols-outlined btn-sm">more_horiz
+              </button>
               <div id="dropdownDots12" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
+                <ul class="dropdown-list" aria-labelledby="dropdownMenuIconButton">
+                  <li><a href="#">Edit</a></li>
+                  <li><a href="#">Delete</a></li>
                 </ul>
               </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
+              <button type="button" class="material-symbols-outlined btn-sm">check</button>
             </div>
           </div>
-          <div class="flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full">
-            <div class="flex flex-col items-center">
-              <p class="text-xl text-onPrimary leading-none">Customer 1</p>
-              <div class="flex gap-[2px]">
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-                <i class="material-symbols-outlined !text-xs text-onPrimary">star</i>
-              </div>
-            </div>
-            <div class="relative flex flex-col gap-1 text-primary">
-              <button type="button" id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots13"
-                data-dropdown-offset-distance="-20" data-dropdown-offset-skidding="-60"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">more_horiz</button>
-              <div id="dropdownDots13" class="hidden z-10 bg-primary20 rounded-lg shadow-sm w-36 cursor-pointer">
-                <ul class="py-2 text-sm text-onPrimary10" aria-labelledby="dropdownMenuIconButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Edit</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white">Delete</a>
-                  </li>
-                </ul>
-              </div>
-              <button type="button"
-                class="material-symbols-outlined text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">check</button>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -511,22 +426,6 @@
               </div>
               <input type="hidden" name="customerName" id="customerNameInput">
             </div>
-            <!-- <form>
-              <div class="relative w-fit">
-                <select id="customers"
-                  class="custom-select appearance-none text-base text-nowrap rounded py-2.5 px-8 pr-12 w-fit h-[46px] bg-primary10 text-onPrimary focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600 cursor-pointer">
-                  <option selected disabled>Customer name</option>
-                  <option value="US">United States</option>
-                  <option value="CA">Canada</option>
-                  <option value="FR">France</option>
-                  <option value="DE">Germany</option>
-                </select>
-                <span
-                  class="absolute right-3 top-1/2 transform -translate-y-1/2 material-symbols-outlined text-onPrimary">
-                  keyboard_arrow_down
-                </span>
-              </div>
-            </form> -->
             <form class="w-full">
               <div class="relative w-full h-full">
                 <a class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -537,10 +436,6 @@
                   placeholder="Search by Project Project name or ID" required />
               </div>
             </form>
-            <!-- <div class="flex gap-2 justify-center items-center rounded py-2 px-4 bg-primary10 text-onPrimary w-full">
-              <a href="#"><i class="material-symbols-outlined !text-xl">search</i></a>
-              <p class="text-base">Search by Project Project name or ID</p>
-            </div> -->
             <button
               class="toggle-filters flex gap-2 items-center rounded py-2 px-4 w-fit bg-primary10 text-onPrimary focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600">
               <i class="material-symbols-outlined !text-xl">filter_alt</i>

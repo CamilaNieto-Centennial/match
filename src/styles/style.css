@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
 @import '@fontsource/quicksand';
 @import 'material-symbols';
 @import "flowbite/src/themes/default";
@@ -31,12 +32,29 @@ a {
   line-height: 1;
 }
 
+
+.icon {
+  @apply leading-none;
+}
+
+.icon-base {
+  @apply icon text-2xl;
+}
+
+.icon-sm {
+  @apply icon text-base;
+}
+
+.icon-lg {
+  @apply icon text-3xl;
+}
+
 .simplebar-track.simplebar-vertical {
-  background: transparent;
+  @apply bg-transparent;
 }
 
 .simplebar-scrollbar:before {
-  display: none;
+  @apply hidden;
 }
 
 .simplebar-scrollbar {
@@ -48,6 +66,63 @@ a {
   border: none;
   z-index: 10;
 }
+
+.navbar {
+  @apply flex items-center justify-between h-16 p-4 bg-primary text-onMuted;
+}
+
+.navbar-link {
+  @apply flex items-center gap-4 text-base font-normal;
+}
+
+.navbar-profile {
+  @apply flex items-center gap-3 py-4;
+}
+
+.customer-section {
+  @apply flex flex-col gap-4 p-4 m-4 bg-primary rounded-lg w-[17rem] h-[calc(100vh-7rem)];
+}
+
+.section-header {
+  @apply flex items-center gap-2 justify-between w-full;
+}
+
+.btn-primary {
+  @apply flex items-center gap-1 rounded-sm py-1 px-4 w-fit bg-secondary hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-800 text-primary;
+}
+
+.scrollable-content {
+  @apply relative h-full overflow-y-auto;
+}
+
+.customer-card {
+  @apply flex justify-between items-center py-2 px-4 bg-primary10 hover:bg-zinc-800 rounded w-full;
+}
+
+.customer-info {
+  @apply flex flex-col items-center;
+}
+
+.stars {
+  @apply flex gap-[2px] text-onPrimary;
+}
+
+.customer-actions {
+  @apply relative flex flex-col gap-1;
+}
+
+.dropdown-list {
+  @apply py-2 text-sm text-onPrimary10;
+}
+
+.dropdown-list a {
+  @apply block px-4 py-2 hover:bg-zinc-600 text-zinc-200 hover:text-white;
+}
+
+.btn-sm {
+  @apply text-lg leading-none text-onPrimary rounded focus:ring-2 focus:outline-none hover:bg-zinc-700 focus:ring-zinc-600;
+}
+
 
 /* Hide the default dropdown arrow */
 /* select {
